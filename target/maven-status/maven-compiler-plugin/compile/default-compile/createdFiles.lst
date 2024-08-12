@@ -7,7 +7,6 @@ org\axa\portal\page\ADJ_portal_quotationScreen.class
 org\axa\framework\Assertion.class
 org\axa\portal\page\Portal_URL_setup.class
 org\axa\portal\validation\ADJ_portal_CommonValidation.class
-com\ADJ\Portal\App.class
 org\axa\portal\page\ParameterOfCorporate_PolicyHolderInformationPage.class
 org\axa\portal\claim\ParameterOfClaimAccidentInformation.class
 org\axa\portal\page\ADJ_portal_vehicleInformationScreen.class
