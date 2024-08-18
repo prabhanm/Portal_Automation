@@ -13,7 +13,6 @@ public class ParameterOfHomeAndQuotationPage {
 	private String testCaseOverview;
 	private String BrowserView;
 	private String unknownInceptionDateCheckbox;
-
 	private String carRegistrationPeriod;
 	private String unkownCarRegistrationCheckbox;
 	private String tempCarRegistrationYear;

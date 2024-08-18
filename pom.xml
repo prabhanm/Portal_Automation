@@ -31,18 +31,23 @@
     <artifactId>poi</artifactId>
     <version>5.3.0</version>
 </dependency>
+<dependency>
+    <groupId>org.apache.xmlbeans</groupId>
+    <artifactId>xmlbeans</artifactId>
+    <version>5.2.1</version>
+</dependency>
 <!-- https://mvnrepository.com/artifact/org.apache.ant/ant -->
 <dependency>
     <groupId>org.apache.ant</groupId>
     <artifactId>ant</artifactId>
     <version>1.10.12</version>
 </dependency>
-
 <dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi-ooxml</artifactId>
     <version>5.3.0</version>
 </dependency>
+
 <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 <dependency>
     <groupId>com.aventstack</groupId>
@@ -74,7 +79,7 @@
         <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>3.0.2</version>
+          <version>3.1.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
@@ -87,6 +92,13 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
+          <configuration>  
+                <archive>  
+                    <manifest>  
+                        <mainClass>org.axa.framework.ADJ_Portal_Runner</mainClass>  
+                    </manifest>  
+                </archive>  
+            </configuration>  
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>

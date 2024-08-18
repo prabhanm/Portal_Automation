@@ -14,7 +14,6 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 import java.util.TreeMap;
-
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -474,6 +473,7 @@ public class utility {
 
 
 		loadConfigFile(".//portalConfiguration.properties");
+		System.out.println("I am here");
 
 
 		List<ParameterOfHomeAndQuotationPage> list=new ArrayList<ParameterOfHomeAndQuotationPage>();
@@ -486,6 +486,7 @@ public class utility {
 			XSSFWorkbook workbook=new XSSFWorkbook(inputStream);
 			XSSFSheet sheet;
 			int sheetCount=workbook.getNumberOfSheets();
+			System.out.println("I am here2");
 
 			for(int j=0;j<sheetCount;j++) {
 
@@ -504,6 +505,7 @@ public class utility {
 						ParameterOfHomeAndQuotationPage parameter=new ParameterOfHomeAndQuotationPage();
 
 						row=sheet.getRow(i);
+						System.out.println("I am here3");
 
 						parameter.setTestCaseID(row.getCell(0).getStringCellValue().trim());
 						parameter.setBrowserView(row.getCell(1).getStringCellValue().trim());
