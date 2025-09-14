@@ -1,10 +1,19 @@
-package org.axa.framework;
+package com.axa.test;
 
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
+import javax.management.DescriptorKey;
+
+import org.axa.framework.Assertion;
+import org.axa.framework.CommonFunctions;
+import org.axa.framework.InitializeBrowser;
+import org.axa.framework.Portal_ObjectRepository;
+import org.axa.framework.Report;
 import org.axa.portal.claim.ADJ_portal_AMP_claimPortal;
 import org.axa.portal.page.ADJ_portal_ContractConfirmationScreen;
 import org.axa.portal.page.ADJ_portal_aboutMainDriverAndPolicyPlanScreen;
@@ -19,6 +28,7 @@ import org.axa.portal.page.ParameterOfHomeAndQuotationPage;
 import org.axa.portal.page.Portal_URL_setup;
 import org.axa.portal.page.utility;
 import org.axa.portal.validation.ADJ_portal_CommonValidation;
+//import org.junit.Test;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
@@ -39,6 +49,7 @@ public class ADJ_portal_testCaseScript {
 	ADJ_portal_ContractConfirmationScreen contractConfirmation=new ADJ_portal_ContractConfirmationScreen();
 	Portal_URL_setup url=new Portal_URL_setup();
 
+	
 	public void End2End1(ParameterOfHomeAndQuotationPage data) throws IOException, InterruptedException, ParseException {
 		common.compareTwoDates("19-12-2023", "22-12-2023");
 		executor.launchBrowser(data.getBrowserView(),data.getTestCaseID());
@@ -67,8 +78,9 @@ public class ADJ_portal_testCaseScript {
 		}
 	}
 
-
-	public void End2End(ParameterOfHomeAndQuotationPage data) throws IOException, InterruptedException {
+    
+	public void End2End(ParameterOfHomeAndQuotationPage data) throws IOException, InterruptedException { 
+		
 		executor.launchBrowser(data.getBrowserView(),data.getTestCaseID());
 		url.launchURL(executor.page, data.getTestCaseID(), data.getInsurnaceFlowType());
 		
@@ -8535,7 +8547,7 @@ public class ADJ_portal_testCaseScript {
 	public void BAU_28903(ParameterOfHomeAndQuotationPage data) throws IOException, InterruptedException {
 		BAU_24996(data);
 	}
-
+	
 	public void Claim_0001(ParameterOfHomeAndQuotationPage data) throws IOException, InterruptedException {
 
 		executor.launchBrowser(data.getBrowserView(),data.getTestCaseID());

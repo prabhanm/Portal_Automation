@@ -12,6 +12,9 @@ import org.axa.portal.page.ADJ_portal_aboutMainDriverAndPolicyPlanScreen;
 	import org.axa.portal.page.ADJ_portal_suspensionCertificateScreen;
 	import org.axa.portal.page.ADJ_portal_vehicleInformationScreen;
 	import org.axa.portal.page.ParameterOfHomeAndQuotationPage;
+	//import org.junit.*;
+
+
 
 	   public class ADJ_Portal_SME_TestCaseScript {
 		InitializeBrowser executor=new InitializeBrowser();
@@ -26,13 +29,36 @@ import org.axa.portal.page.ADJ_portal_aboutMainDriverAndPolicyPlanScreen;
 		ADJ_portal_ContractConfirmationScreen contractConfirmation=new ADJ_portal_ContractConfirmationScreen();
 		CommonFunctions common=new CommonFunctions();
 		
-		
+
+		/*
+		 * @Test
+		 * 
+		 * @Story("E2E case execution")
+		 * 
+		 * @DisplayName("Test Authentication")
+		 * 
+		 * @Description("This test attempts to log into the website using a login and a password. Fails if any error happens.\n\nNote that this test does not test 2-Factor Authentication."
+		 * ) //@Severity(CRITICAL)
+		 * 
+		 * @Owner("John Doe")
+		 * 
+		 * @Link(name = "Website", url = "https://dev.example.com/")
+		 * 
+		 * @Issue("AUTH-123")
+		 * 
+		 * @TmsLink("TMS-456")
+		 */
+		public void test1() {
+			System.out.println("This is juts for testing");
+		}
 		public void End2End(ParameterOfHomeAndQuotationPage data) throws IOException, InterruptedException {
+			
 			executor.launchBrowser(data.getBrowserView(),data.getTestCaseID());
 			try {
 			//System.out.println(executor.page.u);
 			home.e2eFlowOfHomePgae(executor.page, data.getTestCaseID(),data.getInsurnaceProductType(),data.getInsurancePurchaseType(),data.getPurchaseInsurnaceInceptionDate(),data.getInsurnaceFlowType());
 			if(data.getInsurancePurchaseType().equals("現在他社で加入している")) {
+				
 			currentInsurnace.e2eFlowOfCurrentInsurnacePage(executor.page, data.getTestCaseID(),data.getInsurnaceProductType());
 			}else if(data.getInsurancePurchaseType().equals("中断証明書を使用して加入する")) {
 				suspension.e2eFlowOfSuspensionCertificatePage(executor.page, data.getTestCaseID(),data.getInsurnaceProductType());

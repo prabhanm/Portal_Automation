@@ -27,9 +27,9 @@ org\axa\portal\page\ParameterOfCreditCardDetails.class
 org\axa\framework\ADJ_Portal_SME_TestCaseScript.class
 org\axa\portal\claim\ParameterOfClaimAccidentVehicleInfo.class
 org\axa\framework\ADJ_Portal_Runner.class
+org\axa\framework\allureReport.class
 org\axa\framework\Portal_ObjectRepository.class
 org\axa\portal\page\ADJ_portal_paymentInformationScreen.class
-org\axa\framework\ADJ_portal_testCaseScript.class
 org\axa\portal\page\ADJ_portal_suspensionCertificateScreen.class
 org\axa\portal\page\ParameterOfPaymentInformationPage.class
 org\axa\portal\page\ParameterOfSuspensionCertificatePage.class

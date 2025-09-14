@@ -3,6 +3,7 @@ package org.axa.framework;
 import java.io.IOException;
 //import java.nio.file.Path;
 import java.nio.file.Path;
+import java.util.Optional;
 
 //import org.axa.BC.BC_utility;
 import org.axa.portal.page.Portal_URL_setup;
@@ -131,6 +132,51 @@ public class InitializeBrowser {
 		}catch(Exception e){
 			System.out.println(e);
 		}
+	}
+	
+	
+	public void launchBrowserJava8(String browserView, String testCaseId) throws IOException {
+	    playwright = Playwright.create();
+	    Path path = Path.of("");
+	    String browserName = Optional.ofNullable(utility.property.getProperty("BrowserName")).orElse("chrome").toLowerCase();
+	    String browserType = Optional.ofNullable(utility.property.getProperty("BrowserType")).orElse("");
+
+	    switch (browserName) {
+		/*
+		 * case "chrome": context = browserType.equals("Incognito") ? (browser =
+		 * playwright.chromium().launch(new
+		 * BrowserType.LaunchOptions().setHeadless(false),
+		 * playwright.chromium().launch(new
+		 * BrowserType.LaunchOptions().setHeadless(false)), browser.newContext()) :
+		 * playwright.chromium().launchPersistentContext(path, new
+		 * BrowserType.LaunchPersistentContextOptions().setHeadless(false).setChannel(
+		 * "chrome")); break; case "edge": context = browserType.equals("Incognito") ?
+		 * (browser = playwright.chromium().launch(new
+		 * BrowserType.LaunchOptions().setChannel("msedge").setHeadless(false),
+		 * browser.newContext())) : playwright.chromium().launchPersistentContext(path,
+		 * new
+		 * BrowserType.LaunchPersistentContextOptions().setHeadless(false).setChannel(
+		 * "msedge")); break; case "safari": context = browserType.equals("Incognito") ?
+		 * (browser = playwright.webkit().launch(new
+		 * BrowserType.LaunchOptions().setHeadless(false)), browser.newContext()) :
+		 * playwright.webkit().launchPersistentContext(path, new
+		 * BrowserType.LaunchPersistentContextOptions().setHeadless(false).setChannel(
+		 * "webkit")); break; case "firefox": context = browserType.equals("Incognito")
+		 * ? (browser = playwright.firefox().launch(new
+		 * BrowserType.LaunchOptions().setHeadless(false)), browser.newContext()) :
+		 * playwright.firefox().launchPersistentContext(path, new
+		 * BrowserType.LaunchPersistentContextOptions().setHeadless(false).setChannel(
+		 * "firefox")); break; default: browser = playwright.chromium().launch(new
+		 * BrowserType.LaunchOptions().setHeadless(false)); context =
+		 * browser.newContext(); break;
+		 */
+	    }
+
+	    context.tracing().start(new Tracing.StartOptions().setScreenshots(true).setSnapshots(true).setSources(true));
+	    context.clearCookies();
+
+	    page = context.newPage();
+	    page.setViewportSize(browserView.equals("Mobile") ? 390 : 1920, browserView.equals("Mobile") ? 844 : 1080);
 	}
 
 

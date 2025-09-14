@@ -1,0 +1,96 @@
+# Created at 2025-09-14T22:34:01.528
+node:internal/modules/cjs/loader:1225
+
+# Created at 2025-09-14T22:34:01.528
+  const err = new Error(message);
+
+# Created at 2025-09-14T22:34:01.529
+              ^
+
+# Created at 2025-09-14T22:34:01.530
+
+
+# Created at 2025-09-14T22:34:01.531
+Error: Cannot find module './../../../package.json'
+
+# Created at 2025-09-14T22:34:01.532
+Require stack:
+
+# Created at 2025-09-14T22:34:01.532
+- C:\Users\User\AppData\Local\Temp\playwright-java-7376660894843517340\package\lib\server\utils\userAgent.js
+
+# Created at 2025-09-14T22:34:01.533
+- C:\Users\User\AppData\Local\Temp\playwright-java-7376660894843517340\package\lib\utils.js
+
+# Created at 2025-09-14T22:34:01.534
+- C:\Users\User\AppData\Local\Temp\playwright-java-7376660894843517340\package\lib\server\utils\processLauncher.js
+
+# Created at 2025-09-14T22:34:01.535
+- C:\Users\User\AppData\Local\Temp\playwright-java-7376660894843517340\package\lib\cli\programWithTestStub.js
+
+# Created at 2025-09-14T22:34:01.535
+- C:\Users\User\AppData\Local\Temp\playwright-java-7376660894843517340\package\cli.js
+
+# Created at 2025-09-14T22:34:01.536
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+
+# Created at 2025-09-14T22:34:01.537
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+
+# Created at 2025-09-14T22:34:01.537
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+
+# Created at 2025-09-14T22:34:01.538
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+
+# Created at 2025-09-14T22:34:01.538
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+
+# Created at 2025-09-14T22:34:01.539
+    at require (node:internal/modules/helpers:136:16)
+
+# Created at 2025-09-14T22:34:01.539
+    at getPlaywrightVersion (C:\Users\User\AppData\Local\Temp\playwright-java-7376660894843517340\package\lib\server\utils\userAgent.js:90:54)
+
+# Created at 2025-09-14T22:34:01.540
+    at HarTracer.stop (C:\Users\User\AppData\Local\Temp\playwright-java-7376660894843517340\package\lib\server\har\harTracer.js:464:57)
+
+# Created at 2025-09-14T22:34:01.540
+    at Tracing.abort (C:\Users\User\AppData\Local\Temp\playwright-java-7376660894843517340\package\lib\server\trace\recorder\tracing.js:260:21)
+
+# Created at 2025-09-14T22:34:01.541
+    at CRBrowserContext._didCloseInternal (C:\Users\User\AppData\Local\Temp\playwright-java-7376660894843517340\package\lib\server\browserContext.js:214:18) {
+
+# Created at 2025-09-14T22:34:01.542
+  code: 'MODULE_NOT_FOUND',
+
+# Created at 2025-09-14T22:34:01.542
+  requireStack: [
+
+# Created at 2025-09-14T22:34:01.543
+    'C:\\Users\\User\\AppData\\Local\\Temp\\playwright-java-7376660894843517340\\package\\lib\\server\\utils\\userAgent.js',
+
+# Created at 2025-09-14T22:34:01.543
+    'C:\\Users\\User\\AppData\\Local\\Temp\\playwright-java-7376660894843517340\\package\\lib\\utils.js',
+
+# Created at 2025-09-14T22:34:01.544
+    'C:\\Users\\User\\AppData\\Local\\Temp\\playwright-java-7376660894843517340\\package\\lib\\server\\utils\\processLauncher.js',
+
+# Created at 2025-09-14T22:34:01.545
+    'C:\\Users\\User\\AppData\\Local\\Temp\\playwright-java-7376660894843517340\\package\\lib\\cli\\programWithTestStub.js',
+
+# Created at 2025-09-14T22:34:01.545
+    'C:\\Users\\User\\AppData\\Local\\Temp\\playwright-java-7376660894843517340\\package\\cli.js'
+
+# Created at 2025-09-14T22:34:01.546
+  ]
+
+# Created at 2025-09-14T22:34:01.546
+}
+
+# Created at 2025-09-14T22:34:01.547
+
+
+# Created at 2025-09-14T22:34:01.548
+Node.js v22.14.0
+

@@ -8,7 +8,6 @@ import org.axa.framework.CommonFunctions;
 import org.axa.framework.Portal_ObjectRepository;
 import org.axa.framework.Report;
 import org.axa.portal.validation.ADJ_portal_CommonValidation;
-
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.assertions.LocatorAssertions;

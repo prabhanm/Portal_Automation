@@ -5,7 +5,6 @@ import java.io.IOException;
 import org.axa.framework.Assertion;
 import org.axa.framework.CommonFunctions;
 import org.axa.framework.Portal_ObjectRepository;
-import org.axa.framework.Report;
 
 import com.microsoft.playwright.Page;
 
@@ -14,6 +13,7 @@ public class Portal_URL_setup extends CommonFunctions {
 	public void launchURL(Page page,String testCaseId,String insuranceFlowType) throws IOException {
 		try {
 			if(insuranceFlowType.equals("Corporate-->Individual")) {
+				
 				//if(utility.homePageMap.get(testCaseId).getInsurnaceFlowType().equals("Corporate")) {
 				//if(insuranceFlowType.equals("Corporate")) {
 				

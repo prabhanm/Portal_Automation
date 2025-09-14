@@ -26,9 +26,20 @@ public class CommonFunctions {
 		return formate.format(new Date());
 	}
 
-	public void clickAction(Page page,String elementPath) {
-		page.click(elementPath);
+	/*
+	 * public void clickAction(Page page,String elementPath) {
+	 * page.click(elementPath); }
+	 */
+	
+	/*Wraps the page object in an Optional. If page is null, the Optional will be empty; otherwise, it contains the page.
+	If the Optional contains a non-null page, executes the lambda (p -> p.click(elementPath)), which calls the click method on the page object with elementPath as the argument.
+	If page is null, nothing happens (no exception is thrown).
+	*/
+	public void clickAction(Page page, String elementPath) {
+	    java.util.Optional.ofNullable(page)
+	        .ifPresent(p -> p.click(elementPath));
 	}
+	
 	public void clickAction(Locator locator) {
 		locator.click();
 	}

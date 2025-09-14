@@ -1,6 +1,7 @@
 package org.axa.portal.page;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 import org.axa.framework.Assertion;
 import org.axa.framework.CommonFunctions;
@@ -314,6 +315,10 @@ public class ADJ_portal_policyHolderInformationScreen {
 	}
 
 	public void legalEntityValueValidation(Page page,String testCaseId) {
+		
+		List<String>list=Arrays.asList("-","株式会社","合同会社","有限会社","合資会社","合名会社","医療法人","一般財団法人","一般社団法人","宗教法人","社会福祉法人","特定非営利活動法人","弁護士法人","行政書士法人","司法書士法人","税理士法人","社会保険労務士法人","その他");
+		//list.stream().filter(null)
+		
 		String[] definedLegalEntity= {"-","株式会社","合同会社","有限会社","合資会社","合名会社","医療法人","一般財団法人","一般社団法人","宗教法人","社会福祉法人","特定非営利活動法人","弁護士法人","行政書士法人","司法書士法人","税理士法人","社会保険労務士法人","その他"};
 		List<Locator>entityList=page.locator( Portal_ObjectRepository.contractor_legalEntityType+"//option").all();
 		int i=0;

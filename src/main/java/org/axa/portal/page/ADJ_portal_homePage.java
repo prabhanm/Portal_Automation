@@ -2,6 +2,7 @@ package org.axa.portal.page;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 import org.axa.framework.Assertion;
 import org.axa.framework.CommonFunctions;
@@ -36,6 +37,18 @@ public class ADJ_portal_homePage {
 		return data;
 	}
 
+	
+	/*
+	 * public void navigateToCorporateFlow(Page page, String testCaseID, String
+	 * insuranceFlowType) throws IOException {
+	 * java.util.Optional.ofNullable(insuranceFlowType) .filter(type ->
+	 * "Corporate".equals(type)) .ifPresent(type ->
+	 * java.util.Optional.ofNullable(page).ifPresent(p -> { //common.clickAction(p,
+	 * Portal_ObjectRepository.closeBanner); common.acceptCookies(p,
+	 * Portal_ObjectRepository.closeBanner); common.passStatusWithScreenshots(p,
+	 * testCaseID, "SuccessFully navigated to SME flow Top Page", "SMETopPage",
+	 * false); })); }
+	 */
 
 	public void navigateToCorporateFlow(Page page,String testCaseID,String insuranceFlowType) throws IOException {
 
@@ -54,6 +67,12 @@ public class ADJ_portal_homePage {
 	public void loginToEmmaApplication(Page page,String testCaseID) throws IOException, InterruptedException {
 
 		//loginTextboxValidation(page, testCaseID);
+		
+		 java.util.Optional.ofNullable(utility.homePageMap.get(testCaseID).getMemberType())
+	        .filter(param -> "Login Member".equals(param))
+	        .ifPresent(p->{
+	        	common.clickAction(page, Portal_ObjectRepository.emmaLoginLink);
+	        });
 
 		if(utility.homePageMap.get(testCaseID).getMemberType().equals("Login Member")) {
 			common.clickAction(page, Portal_ObjectRepository.emmaLoginLink);
@@ -181,7 +200,7 @@ public class ADJ_portal_homePage {
 	 *@Method Implementation to validate Insurance purchase flow text
 	 *This method is used to assert whether flow is 個人 or 法人
 	 **/
-	public void validateFlowText(Page page,String testCaseID) throws IOException {
+	public void validateFlowText1(Page page,String testCaseID) throws IOException {
 
 		if(!CORPORATE_URL) {
 			Assertion.assertBytext(page, Portal_ObjectRepository.purchaseFlowText, "【個人のお客さま専用ページ】");
@@ -208,6 +227,27 @@ public class ADJ_portal_homePage {
 		 * ,"IndividualFlowSwitchLink",false); PURCHASE_FLOW_TYPE="法人"; }
 		 */
 	}
+	
+	public void validateFlowText(Page page, String testCaseID) throws IOException {
+	    Optional<Boolean> isCorporate = Optional.ofNullable(CORPORATE_URL);
+
+	    isCorporate.ifPresent(corporate -> {
+	        if (corporate) {
+	            Assertion.assertBytext(page, Portal_ObjectRepository.purchaseFlowText, "【法人のお客さま専用ページ】");
+	            Assertion.assertBytext(page, Portal_ObjectRepository.purchaseFlowText + "//following-sibling::span", "個人契約は");
+	            Assertion.assertBytext(page, Portal_ObjectRepository.purchaseFlowText + "//following-sibling::button", "こちら。");
+	            common.takeScreenShotsOfComponent(page, Portal_ObjectRepository.purchaseFlowText, testCaseID,
+	                    "Purchase flow text for Corporate flow displayed successfully", "CorporatePurchaseFlowTextValidation");
+	        } else {
+	            Assertion.assertBytext(page, Portal_ObjectRepository.purchaseFlowText, "【個人のお客さま専用ページ】");
+	            Assertion.assertBytext(page, Portal_ObjectRepository.purchaseFlowText + "//following-sibling::span", "法人契約は");
+	            Assertion.assertBytext(page, Portal_ObjectRepository.purchaseFlowText + "//following-sibling::button", "こちら。");
+	            common.takeScreenShotsOfComponent(page, Portal_ObjectRepository.purchaseFlowText, testCaseID,
+	                    "Purchase flow text for Individual flow displayed successfully", "IndividualPurchaseFlowTextValidation");
+	        }
+	    });
+	}
+	
 	/**
 	 * 
 	 *@Method Implementation to switch from 個人 to 法人 or vice versa

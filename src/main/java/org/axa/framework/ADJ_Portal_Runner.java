@@ -6,12 +6,15 @@ import java.lang.reflect.InvocationTargetException;
 
 import org.axa.portal.page.utility;
 
+
 public class ADJ_Portal_Runner {
+	String z;
 	
 	//static utility util=new utility();
 	public static void main(String[] args) throws IOException, ClassNotFoundException, NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException {
 		
 		System.out.println(CommonFunctions.getCurrentDate("HH:mm"));
+		
 		
 		//BC_utility util=new BC_utility();
 		//util.BC_methodToInokeFunction();
